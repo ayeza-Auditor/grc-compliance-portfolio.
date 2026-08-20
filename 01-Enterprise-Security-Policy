@@ -1,0 +1,93 @@
+Markdown
+ENTERPRISE INFORMATION SECURITY POLICY (EISP)
+Document ID: SEC-POL-2026-001
+Version: 1.0
+Compliance Framework Alignment: ISO/IEC 27001:2022 | NIST CSF v2.0
+Classification: Internal Enterprise Policy
+1. PURPOSE & SCOPE
+1.1 Purpose
+This Enterprise Information Security Policy (EISP) establishes mandatory administrative, technical, and physical safeguards to ensure the Confidentiality, Integrity, and Availability (CIA Triad) of organizational data assets.
+1.2 Scope
+This policy applies universally to:
+All full-time, part-time, contract, and third-party personnel.
+All cloud, hybrid, and on-premises infrastructure managed by or on behalf of the enterprise.
+All endpoints, database systems, network devices, and electronic communications facilities.
+2. GOVERNANCE & ROLES (RACI MATRIX)
+Role
+Responsibility
+RACI Designation
+Chief Information Security Officer (CISO)
+Overall security program approval & policy enforcement
+Accountable (A)
+GRC / Security Compliance Team
+Continuous auditing, policy drafting, & risk assessments
+Responsible (R)
+System Administrators & IT
+Technical control execution, patching, & user deprovisioning
+Responsible (R)
+All Employees & Contractors
+Compliance with security mandates & immediate incident reporting
+Informed (I)
+## 3. ACCESS CONTROL & DEPROVISIONING MANDATES
+
+### 3.1 Principle of Least Privilege (PoLP) & RBAC
+* Access to enterprise data systems, cloud tenants, and internal networks must strictly follow Role-Based Access Control (RBAC).
+* Users are granted only the minimum system permissions necessary to fulfill their explicitly assigned job responsibilities.
+* Universal administrator privileges are strictly prohibited; privileged accounts (e.g., Domain Admins, Root users) must be isolated, monitored, and utilized exclusively for administrative tasks.
+
+### 3.2 Authentication & Session Hygiene Standards
+To prevent unauthorized session hijacking and credential stuffing, all corporate endpoints and services must adhere to the following controls:
+
+* **Multi-Factor Authentication (MFA):** Mandatory across all external-facing applications, VPN connections, SSO portals, and privileged administrator sessions. MFA methods must prioritize time-based one-time passwords (TOTP) or FIDO2 hardware tokens over SMS-based OTPs.
+* **Session Inactivity Timeout:** Automated screen lock software enforcing a mandatory password/pin prompt must trigger after **15 minutes** of continuous user inactivity.
+* **Re-Authentication Controls:** Privileged administrative sessions will automatically terminate after **8 hours** of continuous activity, requiring a full re-authentication sequence.
+
+### 3.3 User Lifecycle Management & Offboarding SLAs
+System provisioning and access revocation procedures must adhere to strict Service Level Agreements (SLAs) to mitigate insider threats and unauthorized access by former personnel:
+
+* **Provisioning:** New account creation requires explicit manager sign-off and ticket logging detailing specific role parameters before access is granted.
+* **Privileged Account Offboarding (Immediate / High Risk):** Emergency terminations or high-risk employee departures require account suspension and credential revocation within **30 minutes** of HR notification.
+* **Standard Deprovisioning SLA:** Standard employee termination requests must result in complete account deactivation and SSO access removal within a strict **2-hour maximum SLA** post-departure.
+* **Quarterly Access Reviews (Privilege Creep Audit):** The GRC team, in coordination with Department Heads, will conduct mandatory quarterly access certifications. Accounts inactive for more than 45 consecutive days will be automatically flagged for administrative review and suspension.
+## 4. VULNERABILITY MANAGEMENT & PATCH REMEDIATION SLAS
+
+### 4.1 Vulnerability Discovery & Risk Classification
+All enterprise IT infrastructure, endpoints, cloud resources, and software applications must undergo continuous automated vulnerability scanning. Discovered vulnerabilities are categorized according to the Common Vulnerability Scoring System (CVSS v3.1/v4.0) base score.
+
+### 4.2 Remediation Service Level Agreements (SLAs)
+To prevent exploitation of known vulnerabilities, system administrators and asset owners must execute patch management, configuration updates, or compensating controls strictly within the following mandated timeframes:
+
+| CVSS Severity Level | Base Score Range | Remediation SLA | Required Action |
+| :--- | :--- | :--- | :--- |
+| **Critical** | 9.0 – 10.0 | **24 to 48 Hours** | Emergency patching cycle; immediate isolation or compensating control if patch is unavailable. |
+| **High** | 7.0 – 8.9 | **7 to 14 Days** | Prioritized patch deployment; remediation tracked in weekly security operations review. |
+| **Medium** | 4.0 – 6.9 | **30 Days** | Standard monthly maintenance window patching. |
+| **Low / Informational** | 0.0 – 3.9 | **90 Days** | Routine operational maintenance and system updates. |
+
+### 4.3 Exceptions & Compensating Controls
+If a patch cannot be deployed within the required SLA due to operational constraints or legacy system dependencies:
+* A formal **Risk Exception Request** must be submitted to the GRC team.
+* The asset owner must implement temporary **Compensating Controls** (e.g., web application firewall rules, network microsegmentation).
+* Risk exceptions must be re-evaluated and signed off by the CISO every 90 days.
+
+---
+SECTION 5 :
+## 5. INCIDENT RESPONSE & POLICY ENFORCEMENT
+
+### 5.1 Incident Response Lifecycle Alignment
+In accordance with **NIST SP 800-61** and **ISO/IEC 27035**, all personnel must immediately report suspected or confirmed security events (e.g., unauthorized access, malware alerts, exposed credentials, missing devices) to the Security Operations Center (SOC) or Incident Response Team.
+
+The Incident Response Team will execute the four core phases of incident management:
+1. **Preparation:** Maintaining logs, incident playbooks, and trained response staff.
+2. **Detection & Analysis:** Triaging alerts, scoping the intrusion, and determining impact.
+3. **Containment, Eradication & Recovery:** Isolating affected hosts, revoking compromised credentials, removing threats, and restoring systems from validated backups.
+4. **Post-Incident Activity:** Documenting lessons learned and updating policies/controls within 14 business days of incident closure.
+
+### 5.2 Mandatory Incident Notification Timelines
+* **Internal Escalation:** High and Critical security incidents must be escalated to executive leadership (CISO, CTO, Legal) within **2 hours** of confirmation.
+* **Regulatory & External Notification:** Data breaches involving Personally Identifiable Information (PII) or sensitive personal data must be reported to relevant regulatory authorities and affected data subjects strictly within applicable statutory deadlines (e.g., **72 hours** for GDPR alignment).
+
+### 5.3 Policy Enforcement & Disciplinary Actions
+* Compliance with this Enterprise Information Security Policy is mandatory for all personnel.
+* Failure to comply with these security mandates—including intentional bypass of controls, sharing of privileged credentials, or failure to report security incidents—may result in disciplinary action up to and including termination of employment, revocation of access privileges, and potential legal action.
+* Policy compliance audits will be conducted continuously by the GRC team, with formal compliance reports delivered to executive management quarterly.
