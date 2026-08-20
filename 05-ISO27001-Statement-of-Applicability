@@ -1,0 +1,41 @@
+# STATEMENT OF APPLICABILITY (SoA) — ISO/IEC 27001:2022
+
+**Organization:** CloudVault Tech Inc.
+
+**Version:** 1.0
+
+**Date:** August 12, 2026
+
+**Approved By:** Chief Information Security Officer (CISO)
+
+**Standard:** ISO/IEC 27001:2022 Annex A Controls
+
+---
+
+## 1. PURPOSE & SCOPE
+
+This Statement of Applicability (SoA) identifies which ISO/IEC 27001:2022 Annex A controls apply to the CloudVault Tech Information Security Management System (ISMS). Every control has been evaluated for inclusion based on risk assessment outcomes, legal/regulatory mandates, and operational requirements.
+
+---
+
+## 2. ANNEX A CONTROL SELECTION & JUSTIFICATION
+
+| Control ID | Control Name | Theme | Applicable? (Yes/No) | Justification for Inclusion or Exclusion | Implementation Status | Evidence / Document Reference |
+| --- | --- | --- | --- | --- | --- | --- |
+| **A.5.1** | Policies for Information Security | Organizational | **YES** | Mandatory base requirement to govern organizational security practices. | **Implemented** | Enterprise Information Security Policy (EISP SEC-POL-2026-001) |
+| **A.6.1** | Screening | People | **YES** | Required to mitigate insider threat risks prior to onboarding personnel. | **In Progress** | HR Screening Standard & Background Check SLA |
+| **A.7.4** | Physical Security Monitoring | Physical | **NO** | Excluded: CloudVault Tech operates 100% cloud-native with no physical data centers or server rooms. | **Excluded** | Risk Assessment Exclusions Register (SEC-EXC-2026-01) |
+| **A.8.12** | Data Leakage Prevention (DLP) | Technological | **YES** | Mandated to protect sensitive customer financial data and prevent unauthorized exfiltration. | **Implemented** | Endpoint DLP Policy & AWS GuardDuty Rules |
+| **A.8.13** | Information Backup | Technological | **YES** | Essential for data resilience, business continuity, and disaster recovery. | **In Progress** | Backup & Data Restoration Drill Standard |
+| **A.8.20** | Network Security | Technological | **YES** | Critical to safeguard remote workforce traffic across untrusted public networks. | **In Progress** | Remote Access & Enforced VPN Deployment Mandate |
+
+---
+
+## 3. SUMMARY OF ANNEX A IMPLEMENTATION
+
+---
+
+## 4. MAINTAINING & REVIEWING THE SOA
+This Statement of Applicability is a living document. It must be formally re-evaluated and submitted for executive sign-off:
+* Annually during the formal ISMS Management Review.
+* Following any significant operational change (e.g., business expansion, introduction of physical offices, or new regulatory mandates).
