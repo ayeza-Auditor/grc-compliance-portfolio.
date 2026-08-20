@@ -1,0 +1,31 @@
+# USER ACCESS & DEPROVISIONING AUDIT LOG
+
+**Log ID:** UAL-2026-Q3
+
+**Audit Scope:** Q3 Enterprise Offboarding SLA & Privilege Review
+
+**Framework Alignment:** ISO/IEC 27001 Control A.9.2 (User Access Management) | NIST SP 800-53 IA-2
+
+**Target SLA:** Mandatory Account Revocation within **2 Hours (120 Mins)** of Departure
+
+---
+
+## 1. OFFBOARDING EXECUTION & SLA TRACKING LOG
+
+| Employee ID | Department | Departure Type | HR Notification Time | IT Action Time | SLA Time (Mins) | SLA Compliance Status | Auditor Notes & Evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **EMP-1042** | Engineering | Voluntary | 2026-08-01 09:00 | 2026-08-01 10:15 | **75 Mins** | **COMPLIANT** | SSO & AWS access revoked via automated workflow. |
+| **EMP-0891** | IT Operations | Termination | 2026-08-08 17:00 | 2026-08-11 11:00 | **3,960 Mins** | **NON-COMPLIANT** | **AUD-2026-02 Violation.** Active Directory left open over weekend. Log review required. |
+| **EMP-1205** | Finance | Voluntary | 2026-08-10 14:00 | 2026-08-10 15:10 | **70 Mins** | **COMPLIANT** | Banking portal tokens & Active Directory disabled. |
+| **EMP-0734** | Marketing | Involuntary | 2026-08-11 11:30 | 2026-08-11 11:50 | **20 Mins** | **COMPLIANT** | High-risk offboarding executed within 30-min emergency SLA. |
+| **EMP-1118** | Product | Voluntary | 2026-08-12 08:00 | 2026-08-12 11:45 | **225 Mins** | **NON-COMPLIANT** | Exceeded 2-hour SLA by 105 mins due to manual ticketing delay. |
+
+---
+
+## 2. PRIVILEGE CREEP & INACTIVE ACCOUNT AUDIT
+
+| Account ID | Primary Role | Last Active Date | Inactive Days | Flagged Status | Remediation Action |
+| --- | --- | --- | --- | --- | --- |
+| **adm_jdoe** | Sr. SysAdmin | 2026-06-15 | **58 Days** | Exceeds 45-Day Threshold | Account suspended; privileges pending departmental sign-off. |
+| **dev_external** | Contractor | 2026-05-01 | **103 Days** | Stale Contractor Account | Account permanently deleted per lifecycle policy. |
+| **svc_sql_backup** | Service Account | 2026-08-11 | **1 Day** | Active Service Account | Verified valid service account; no action required. |
