@@ -1,0 +1,42 @@
+# THIRD-PARTY VENDOR RISK ASSESSMENT REPORT
+
+**Vendor Name:** AI-Draft Technologies Inc.
+
+**Service Evaluated:** AI Copywriting & Marketing Platform
+
+**Evaluating Auditor:** Lead GRC Analyst
+
+**Assessment Date:** August 13, 2026
+
+**Final Risk Decision:** CONDITIONAL REJECTION / PENDING MANDATORY REMEDIATION
+
+---
+
+## 1. EXECUTIVE SUMMARY
+
+A Third-Party Risk Assessment (TPRA) was conducted for AI-Draft Technologies Inc. prior to procurement by the Marketing department. The vendor's service involves processing internal customer communications and product roadmaps.
+
+The assessment revealed **3 Critical security risks**, including lack of encryption at rest, absence of independent SOC 2/ISO certifications, and default LLM data training policies. **Procurement is blocked** until mandatory compensating controls are contractually agreed upon.
+
+---
+
+## 2. VENDOR RISK SCORING MATRIX
+
+| Vulnerability / Finding | Inherent Risk | Likelihood (1-5) | Impact (1-5) | Risk Score | Risk Rating |
+| --- | --- | --- | --- | --- | --- |
+| **Model Data Retention:** Uploads train public LLM models | Data Leakage / IP Theft | 5 | 4 | **20 / 25** | **CRITICAL** |
+| **Unencrypted Data:** No AES-256 encryption at rest | Data Exfiltration | 4 | 4 | **16 / 25** | **CRITICAL** |
+| **Lack of Audit Assurance:** No SOC 2 Type II or ISO 27001 | Unverified Controls | 3 | 4 | **12 / 25** | **HIGH** |
+
+---
+
+## 3. MANDATORY REMEDIATION & COMPENSATING CONTROLS
+
+To move from **REJECTED** to **CONDITIONALLY APPROVED**, AI-Draft must contractually sign and enforce the following requirements:
+
+1. **Enterprise Opt-Out Agreement (LLM Training):**
+    - *Mandate:* Sign a legally binding Data Processing Addendum (DPA) guaranteeing Zero Data Retention (ZDR) and total exclusion of company data from LLM model training.
+2. **Mandatory Encryption at Rest:**
+    - *Mandate:* Enforce AES-256 bit database encryption for all stored customer assets within **30 days**.
+3. **Independent Third-Party Security Audit:**
+    - *Mandate:* AI-Draft must provide a SOC 2 Type II report or initiate an ISO/IEC 27001 audit within **120 days**; interim approval requires a right-to-audit clause for our internal security team.
